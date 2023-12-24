@@ -1,0 +1,145 @@
+
+/* adjusting content size to fit screen size */
+@media screen and (max-width: 800px) {
+  header {
+      flex: 100;
+  }
+
+  article { 
+      flex: 50;
+  }
+
+  nav {
+      flex: 100;
+  }
+
+  footer {
+      flex:100;
+  }
+
+  h1 {
+      flex:100;
+  }
+
+  p {
+      flex:100;
+  }
+}
+
+/*adjusting background and text color */
+body {
+  color:violet;
+  background-color:black;
+}
+
+/*  sets the header background*/
+header {
+  background-image: url("/images/campus.png");
+  background-size:cover;
+  display:flex;
+  flex-direction: row;
+}
+
+/* adjusts the header img */
+#headerlogo img{
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+
+/*centers the navigation and colors the "button" */
+.topnav {
+  display:flex;
+  margin: 0 auto;
+  background-color: black;
+  justify-content: center; 
+}
+
+/*removes the underline, sets the text color, increases font size*/
+.topnav a {
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+  padding: 20px;
+  font-size: x-large;
+  font-family: 'Trirong', serif;
+}
+
+/* changes the color of background and text when user is hovering*/
+nav a:hover{
+  text-decoration: underline;
+}
+
+/* adjustst the flex property of section */
+section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width:40%;
+  padding-left: 40px;
+}
+
+/*adjust flex property of article */
+article {
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+  width:50%;
+}
+
+/* adjust video */
+.vid-container {
+  flex: 1; 
+}
+iframe { 
+  width: 500px;
+  aspect-ratio: 16 / 9;
+}
+
+
+/* formats the foooter */
+footer {
+  margin-bottom: -20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(163, 163, 163);
+  width: 100%;
+}
+
+/* formats anchor elements in footer */
+footer a {
+  color:rgb(163, 163, 163);
+  text-decoration: underline;
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color:rgb(163, 163, 163);
+}
+
+/* Hover effect over icon */
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+table td,
+th {
+  padding: 20px;
+}
