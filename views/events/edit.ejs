@@ -1,0 +1,30 @@
+<div class="data-form">
+  <form method="POST" action="<%=`/events/${event._id}/update?_method=PUT`%>">
+    <h2>Edit event:</h2>
+    <label for="inputTitle">Title</label>
+    <input type="text" name="title" id="inputTitle" placeholder="Title" required autofocus value="<%= event.title %>"/>
+
+    <label for="inputDescription">Description</label>
+    <input type="text" name="description" id="inputDescription" placeholder="Description" required value="<%= event.description %>"/>
+
+    <label for="inputLocation">Location:</label>
+    <input type="text" name="location" id="inputLocation" placeholder="Location" required value="<%= event.location %>"/>
+
+    <label for="inputStartDate">Start Date</label>
+    <input type="date" name="startDate" id="inputStartDate" value="<%= event.startDate.toISOString().split('T')[0] %>" required/>
+
+    <label for="inputEndDate">End Date</label>
+    <input type="date" name="endDate" id="inputEndDate" placeholder="End Date" required value="<%= event.endDate.toISOString().split('T')[0] %>"/>
+
+    <label for="inputIsOnline">Is Online</label>
+    <input type="text" name="isOnline" id="inputIsOnline" value="<%= event.isOnline %>"/>
+
+    <label for="inputRegistrationLink">Registration Link</label>
+    <input type="text" id="inputRegistrationLink" name="registrationLink" value="<%= event.registrationLink %>"/>
+
+    <label for="inputOrganizer">Organizer</label>
+    <input type="text" id="inputOrganizer" name="organizer" value="<%= event.organizer %>"/>
+
+    <button type="submit">Update</button>
+  </form>
+</div>

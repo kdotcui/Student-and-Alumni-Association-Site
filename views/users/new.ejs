@@ -1,0 +1,48 @@
+<div class="data-form">
+  <form action="/users/create" method="POST">
+    <h2>Create a new user:</h2>
+    <label for="inputName">Full Name</label>
+    <input type="text" name="name" id="inputName" placeholder="Full name" autofocus/>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" placeholder="Password" required />
+    <label for="inputEmail">Email address</label>
+    <input type="email" name="email" id="inputEmail" placeholder="Email address" required />
+
+    <label for="inputRole">Role:</label>
+    <select id="inputRole" name="role">
+      <option value="student" selected>Student</option>
+      <option value="alumni">Alumni</option>
+    </select>
+    
+    <label for="inputGraduationYear">Graduation Year:</label>
+    <input type="number" id="inputGraduationYear" name="graduationYear" required>
+
+    <label for="inputMajor">Major:</label>
+    <input type="text" id="inputMajor" name="major" required>
+
+    <label for="inputJob">Job:</label>
+    <input type="text" id="inputJob" name="job">
+
+    <label for="inputCompany">Company:</label>
+    <input type="text" id="inputCompany" name="company">
+
+    <label for="inputCity">City:</label>
+    <input type="text" id="inputCity" name="city">
+
+    <label for="inputState">State:</label>
+    <input type="text" id="inputState" name="state">
+
+    <label for="inputCountry">Country:</label>
+    <input type="text" id="inputCountry" name="country">
+
+    <label for="inputZipCode">Zip Code:</label>
+    <input type="number" id="inputZipCode" name="zipCode" min="10000" max="99999">
+
+    <label for="inputBio">Bio:</label>
+    <textarea id="inputBio" name="bio"></textarea>
+
+    <label for="inputInterests">Interests:</label>
+    <input type="text" id="inputInterests" name="interests">
+    <button type="submit">Sign in</button>
+  </form>
+</div>

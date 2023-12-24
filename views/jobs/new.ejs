@@ -1,0 +1,54 @@
+<div class="data-form">
+  <form action="/jobs/create" method="POST">
+    <h2>Create a new job:</h2>
+    <label for="inputTitle">Title</label>
+    <input
+      type="text"
+      name="title"
+      id="inputTitle"
+      placeholder="Title"
+      autofocus
+    />
+    <label for="inputCompany">Company</label>
+    <input
+      type="text"
+      name="company"
+      id="inputCompany"
+      placeholder="Company"
+    />
+
+    <label for="inputLocation">Location:</label>
+    <input type="text" id="inputLocation" name="location" id="inputLocation"placeholder="Location" required>
+
+    <label for="inputDescription">Description</label>
+    <input
+      type="text"
+      name="description"
+      id="inputDescription"
+      placeholder="Description"
+    />
+    <label for="inputRequirements">Requirements</label>
+    <textarea id="inputRequirements" name="requirements" placeholder="Requirements" required></textarea>
+
+    <label for="inputSalary">Salary</label>
+    <input type="number" id="inputSalary" name="salary" placeholder="Salary" required>
+
+    <label for="inputContactEmail">Contact Email</label>
+    <input type="email" id="inputContactEmail" name="contactEmail" placeholder="Contact Email" required>
+
+    <label for="inputContactPhone">Contact Phone</label>
+    <input type="tel" id="inputContactPhone" name="contactPhone" placeholder="Contact Phone" required>
+
+    <label for="inputPostDate">Post Date</label>
+    <input type="date" id="inputPostDate" name="postDate" value="<%= new Date().toISOString().split('T')[0] %>">
+
+    <label for="inputDeadlineDate">Deadline Date</label>
+    <input type="date" id="inputDeadlineDate" name="deadlineDate" placeholder="Deadline Date" required>
+
+    <label for="inputIsActive">Is Active</label>
+    <input type="text" id="inputIsActive" name="isActive" checked>
+
+    <input type="hidden" name="organizer" id="inputOrganizer" value="<%= currentUser._id %>" required/>
+    <button type="submit">Create Job</button>
+  </form>
+</div>

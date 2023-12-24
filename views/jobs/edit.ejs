@@ -1,0 +1,39 @@
+<div class="data-form">
+  <form method="POST" action="<%=`/jobs/${job._id}/update?_method=PUT`%>">
+    <h2>Edit job:</h2>
+    <label for="inputTitle">Title</label>
+    <input type="text" name="title" id="inputTitle" placeholder="Title" autofocus value="<%= job.title %>"/>
+
+    <label for="inputCompany">Company</label>
+    <input type="text" name="company" id="inputCompany" placeholder="Company" value="<%= job.company %>"/>
+
+    <label for="inputLocation">Location:</label>
+    <input type="text" id="inputLocation" name="location" placeholder="Location" required value="<%= job.location %>"/>
+
+    <label for="inputDescription">Description</label>
+    <input type="text" name="description" id="inputDescription" placeholder="Description" value="<%= job.description %>"/>
+
+    <label for="inputRequirements">Requirements</label>
+    <textarea id="inputRequirements" name="requirements" placeholder="Requirements" required><%= job.requirements %></textarea>
+
+    <label for="inputSalary">Salary</label>
+    <input type="number" id="inputSalary" name="salary" placeholder="Salary" required value="<%= job.salary %>"/>
+
+    <label for="inputContactEmail">Contact Email</label>
+    <input type="email" id="inputContactEmail" name="contactEmail" placeholder="Contact Email" required value="<%= job.contactEmail %>"/>
+
+    <label for="inputContactPhone">Contact Phone</label>
+    <input type="tel" id="inputContactPhone" name="contactPhone" placeholder="Contact Phone" required value="<%= job.contactPhone %>"/>
+
+    <label for="inputPostDate">Post Date</label>
+    <input type="date" id="inputPostDate" name="postDate" value="<%= job.postDate.toISOString().split('T')[0] %>" />
+
+    <label for="inputDeadlineDate">Deadline Date</label>
+    <input type="date" id="inputDeadlineDate" name="deadlineDate" placeholder="Deadline Date" required value="<%= job.deadlineDate.toISOString().split('T')[0] %>"/>
+
+    <label for="inputIsActive">Is Active</label>
+    <input type="text" id="inputIsActive" name="isActive"  value="<%= job.isActive %>"/>
+
+    <button type="submit">Update</button>
+  </form>
+</div>

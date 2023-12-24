@@ -1,0 +1,22 @@
+<div class="data-form">
+  <form action="/events/create" method="POST">
+    <h2>Create a new event:</h2>
+    <label for="inputTitle">Title</label>
+    <input type="text" name="title" id="inputTitle" placeholder="Title" required autofocus />
+    <label for="inputDescription">Description</label>
+    <input type="text" name="description" id="inputDescription" placeholder="Description" required />
+    <label for="inputLocation">Location:</label>
+    <input type="text" name="location" id="inputLocation"  placeholder="Location" required>
+    <label for="inputStartDate">Start Date</label>
+    <input type="date" name="startDate" id="inputStartDate"  value="<%= new Date().toISOString().split('T')[0] %>" required>
+    <label for="inputEndDate">End Date</label>
+    <input type="date" name="endDate" id="inputEndDate" placeholder="End Date" required>
+    <label for="inputIsOnline">Is Online</label>
+    <input type="text" name="isOnline" id="inputIsOnline">
+    <label for="inputRegistrationLink">Registration Link</label>
+    <input type="text" id="inputRegistrationLink" name="registrationLink">
+    <input type="hidden" name="organizer" id="inputOrganizer" value="<%= currentUser._id %>" required/>
+
+    <button type="submit">Create Event</button>
+  </form>
+</div>

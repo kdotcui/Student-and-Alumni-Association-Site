@@ -1,0 +1,58 @@
+<div class="data-form">
+  <form method="POST" action="<%=`/users/${user._id}/update?_method=PUT`%>">
+    <h2>Edit user:</h2>
+    <label for="inputFullName">First Name</label>
+    <input
+      type="text"
+      name="name"
+      id="inputFullName"
+      value="<%= user.name %>"
+      placeholder="Full Name"
+      autofocus
+    />
+    <label for="inputEmail">Email address</label>
+    <input
+      type="email"
+      name="email"
+      id="inputEmail"
+      value="<%= user.email %>"
+      placeholder="Email address"
+      required
+    />
+    <label for="inputPassword">Password</label>
+    <input
+      type="password"
+      name="password"
+      id="inputPassword"
+      value="<%= user.password %>"
+      placeholder="Password"
+      required
+    />
+    <label for="inputRole">Role:</label>
+    <select id="inputRole" name="role">
+      <option value="student" selected>Student</option>
+      <option value="alumni">Alumni</option>
+    </select>
+    <label for="inputGraduationYear">Graduation Year:</label>
+    <input type="number" id="inputGraduationYear" name="graduationYear" value="<%= user.graduationYear %>" required>
+    <label for="inputMajor">Major:</label>
+    <input type="text" id="inputMajor" name="major" value="<%= user.major %>" required>
+    <label for="inputJob">Job:</label>
+    <input type="text" id="inputJob" name="job" value="<%= user.job %>">
+    <label for="inputCompany">Company:</label>
+    <input type="text" id="inputCompany" name="company" value="<%= user.company %>">
+    <label for="inputCity">City:</label>
+    <input type="text" id="inputCity" name="city" value="<%= user.city %>">
+    <label for="inputState">State:</label>
+    <input type="text" id="inputState" name="state" value="<%= user.state %>">
+    <label for="inputCountry">Country:</label>
+    <input type="text" id="inputCountry" name="country" value="<%= user.country %>">
+    <label for="inputZipCode">Zip Code</label>
+    <input type="text" name="zipCode" id="inputZipCode" pattern="\d*" value="<%= user.zipCode %>" placeholder="Zip Code" required/>
+    <label for="inputBio">Bio:</label>
+    <textarea id="inputBio" name="bio"><%= user.bio %></textarea>
+    <label for="inputInterests">Interests:</label>
+    <input type="text" id="inputInterests" name="interests" value="<%= user.interests.join(', ') %>">
+    <button type="submit">Update</button>
+  </form>
+</div>

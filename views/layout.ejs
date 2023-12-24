@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Brandeis Student & Alumni</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>   
+            <div id="headerlogo">
+                <a href="https://www.brandeis.edu/"><img src= "/images/BrandeisLogo.png"></a>
+            </div> 
+            <div id="headertxt">
+                <h1>Brandeis University</h1>
+                <h3>Student & Alumni Association</h3>
+            </div>
+        </header>
+        
+        <nav class="topnav">
+            <table>
+                <tr>
+                    <td><a href="/index">Home</a></td>
+                    <td><a href="/about">About</a></td>
+                    <td><a href="/events">Events</a></td>
+                    <td><%- include('events/_eventsModal') %></td>
+                    <td><a href="/jobs">Jobs</a></td>
+                    <td><a href="/contact">Contact</a></td>
+                    <td><a href="/chat" class="chat-icon">Chat</a></td>
+                    <% if (loggedIn) { %>
+                        <td><a href="<%=`/users/${currentUser._id}`%>"> <%= currentUser.name %></a></td>
+                        <div
+                            id="apiToken"
+                            data-token="<%= currentUser.apiToken %>"
+                            style="display: none"
+                        ></div>
+                        <td><a href="/users/logout">Log out</a></td>
+                    <%} else {%>
+                        <td><a href="/users/login">Log In</a></td>
+                        <td><a href="/users/new">Sign up</a></td>
+                    <% } %>
+                </tr>
+            </table>
+        </nav> 
+
+        <div class="flashes">
+          <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+          <div class="flash success"><%= flashMessages.success %></div>
+          <% } else if (flashMessages.error) { %>
+          <div class="flash error"><%= flashMessages.error %></div>
+          <% } %> <% } %>
+        </div>
+        <%- body%>
+
+        <footer>
+            <div id="footertext">
+                <p>Brandeis University ©2023</p>
+                <a href="#"><p>Back to Top</p></a>
+            </div>
+            <div id="footersocials">
+                <a href="https://www.x.com" class="fa fa-twitter"></a>
+                <a href="https://www.paypal.com/" class="fa fa-paypal"></a>
+                <a href="https://www.github.com" class="fa fa-github"></a>
+                <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+                <a href="https://www.youtube.com/" class="fa fa-youtube-play"></a>
+            </div>
+        </footer>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/js/kitchenApp.js"></script>
+    </body>
+</html>
+ 
